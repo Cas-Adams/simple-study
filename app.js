@@ -1,7 +1,9 @@
 const newtask = document.getElementsByTagName("form")[0];
 const TitleInput = document.getElementById("title");
 const DescInput = document.getElementById("desc");
+//Declare inputs as constants
 
+//adds event listener to the form that will listen for when an input has been submitted
 newtask.addEventListener("submit",(event) => {
 
     event.preventDefault()
@@ -11,6 +13,7 @@ newtask.addEventListener("submit",(event) => {
 
 });
 
+//Stores the new task from the from 
 function storeNewTask(TaskTitle, TaskDesc) {
     const tasks = GetAllStoredTasks();
 
@@ -20,6 +23,7 @@ function storeNewTask(TaskTitle, TaskDesc) {
     
 };
 
+//gets all stored tasks from local storage
 function GetAllStoredTasks() {
   // Get the string of session data from localStorage
   const data = window.localStorage.getItem(STORAGE_KEY);
