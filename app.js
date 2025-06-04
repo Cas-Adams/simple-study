@@ -16,7 +16,7 @@ function storeNewTask(TaskTitle, TaskDesc) {
 
     tasks.push({TaskTitle,TaskDesc});
 
-    window.alert("YARGH")
+    window.alert("Testing")
     
 };
 
