@@ -11,6 +11,10 @@ newtask.addEventListener("submit",(event) => {
     const TaskTitle = TitleInput.value;
     const TaskDesc = DescInput.value;
 
+    storeNewTask(TaskTitle, TaskDesc);
+
+    newtask.reset();
+
 });
 
 //Stores the new task from the from 
@@ -18,6 +22,8 @@ function storeNewTask(TaskTitle, TaskDesc) {
     const tasks = GetAllStoredTasks();
 
     tasks.push({TaskTitle,TaskDesc});
+
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(sessions));
 
     window.alert("Testing")
     
@@ -28,9 +34,31 @@ function GetAllStoredTasks() {
   // Get the string of session data from localStorage
   const data = window.localStorage.getItem(STORAGE_KEY);
 
-  // If no sessions were stored, default to an empty array
+  // If no tasks were stored, default to an empty array
   // otherwise, return the stored data as parsed JSON
-  const sessions = data ? JSON.parse(data) : [];
+  const tasks = data ? JSON.parse(data) : [];
 
-  return sessions;
+  return tasks;
 }
+
+
+function renderPastTasks(filterDate = null) {
+  const tasks = getAllStoredTasks();
+  pastTaskContainer.textContent = "";
+
+  const pastTaskHeader = document.createElement("h2");
+  pastTaskHeader.textContent = filterDate ? `Tasks on ${formatDate(filterDate)}` : "Past tasks";
+  const pastTaskList = document.createElement("ul");
+
+  filteredTasks.forEach((session, index) => {
+    const sessionEl = document.createElement("li");
+    sessionEl.innerHTML = `${tasks.TaskTitle} to ${session.TaskDesc}`;
+
+    pastTaskList.appendChild(sessionEl);
+  });
+
+  pastTaskContainer.appendChild(pastTaskHeader);
+  pastTaskContainer.appendChild(pastTaskList);
+}
+
+renderPastTasks();
