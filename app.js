@@ -1,6 +1,8 @@
 const newtask = document.getElementsByTagName("form")[0];
 const TitleInput = document.getElementById("title");
 const DescInput = document.getElementById("desc");
+const STORAGE_KEY = "Simple-Study";
+const pastTaskContainer = document.getElementById("past-tasks");
 //Declare inputs as constants
 
 //adds event listener to the form that will listen for when an input has been submitted
@@ -19,19 +21,19 @@ newtask.addEventListener("submit",(event) => {
 
 //Stores the new task from the from 
 function storeNewTask(TaskTitle, TaskDesc) {
-    const tasks = GetAllStoredTasks();
+    const tasks = getAllStoredTasks();
 
     tasks.push({TaskTitle,TaskDesc});
 
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(sessions));
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
 
     window.alert("Testing")
     
 };
 
 //gets all stored tasks from local storage
-function GetAllStoredTasks() {
-  // Get the string of session data from localStorage
+function getAllStoredTasks() {
+  // Get the string of task data from localStorage
   const data = window.localStorage.getItem(STORAGE_KEY);
 
   // If no tasks were stored, default to an empty array
@@ -50,15 +52,16 @@ function renderPastTasks(filterDate = null) {
   pastTaskHeader.textContent = filterDate ? `Tasks on ${formatDate(filterDate)}` : "Past tasks";
   const pastTaskList = document.createElement("ul");
 
-  filteredTasks.forEach((session, index) => {
-    const sessionEl = document.createElement("li");
-    sessionEl.innerHTML = `${tasks.TaskTitle} to ${session.TaskDesc}`;
+  tasks.forEach((tasks, index) => {
+    const taskEL = document.createElement("li");
+    taskEL.innerHTML = `${tasks.TaskTitle} ${tasks.TaskDesc}`;
 
-    pastTaskList.appendChild(sessionEl);
+    pastTaskList.appendChild(taskEL);
   });
 
   pastTaskContainer.appendChild(pastTaskHeader);
   pastTaskContainer.appendChild(pastTaskList);
+
 }
 
 renderPastTasks();

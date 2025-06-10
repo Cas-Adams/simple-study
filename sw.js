@@ -2,7 +2,7 @@
 const VERSION = "v1";
 
 // use the version number to create cache name
-const CACHE_NAME = `learner-hours-${VERSION}`;
+const CACHE_NAME = `simple-study-${VERSION}`;
 
 // list of app resources
 const APP_STATIC_RESOURCES = [
