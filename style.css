@@ -2,8 +2,11 @@
 li {
     list-style-type: none;
     padding: 0.2em 0.5em;
-    background-color: palevioletred;
+    background-color: rgb(200, 228, 232);
     line-height: 1.4;
+    max-width: 50%;
+    border-radius: 4px;
+    margin: 2px auto;
 }
 
 ul {
@@ -39,4 +42,14 @@ body {
   width: 100%;
   max-width: 800px;
   opacity: 0.9;
+  text-align: center;
+}
+
+input {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+h1 {
+  text-align: left;
 }
