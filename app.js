@@ -48,19 +48,38 @@ function renderPastTasks(filterDate = null) {
   pastTaskContainer.textContent = "";
 
   const pastTaskHeader = document.createElement("h2");
-  pastTaskHeader.textContent = filterDate ? `Tasks on ${formatDate(filterDate)}` : "Past tasks";
+  pastTaskHeader.textContent = "Tasks To Do:";
   const pastTaskList = document.createElement("ul");
 
-  tasks.forEach((tasks, index) => {
+  tasks.forEach((tasks, index) => {         
     const taskEL = document.createElement("li");
-    taskEL.innerHTML = `${tasks.TaskTitle} ${tasks.TaskDesc}`;
+    taskEL.style.display = "flex";
+    taskEL.style.justifyContent = "space-between";
+    taskEL.style.alignItems = "center";
 
+    const taskText = document.createElement("span");
+    taskText.textContent = `${tasks.TaskTitle} ${tasks.TaskDesc}`;
+
+    const deletebtn = document.createElement("button");
+    deletebtn.textContent = "delete";
+    deletebtn.addEventListener("click", () => {deleteTask(index);});
+
+
+    taskEL.appendChild(taskText);
+    taskEL.appendChild(deletebtn);
     pastTaskList.appendChild(taskEL);
-  });
+    });
 
   pastTaskContainer.appendChild(pastTaskHeader);
   pastTaskContainer.appendChild(pastTaskList);
+  }
+  
 
+function deleteTask(index) {
+  const tasks = getAllStoredTasks();
+  tasks.splice(index, 1); // Remove task at the given index
+  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+  renderPastTasks(); // Refresh the task list
 }
 
 renderPastTasks();

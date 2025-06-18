@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tasks</title>
     <link rel="stylesheet" href="style.css">   
 </head>
 <body>
-    <div class="container">
-        <h1>Test Text</h1>
-        <form>
-            <label for="title">Task Title:</label><br>
-            <input type="text" id="title" name="title" required><br>
-            <label for="desc">Task Description:</label><br>
-            <input type="desc" id="desc" name="desc" required><br>
-            <button id="submit">Submit</button>
-        </form>
-        <section id="past-tasks">Todo:</section>
+    <!-- Side navigation -->
+    <div class="sidenav">
+    <a href="about.html">About</a>
+    <a href="index.html">Tasks</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="clock.html">Clock</a>
+    </div>
+    <div class="main">
+        <div class="container">
+            <h1>To Do List:</h1>
+            <form>
+                <label for="title">Task Title:</label><br>
+                <input type="text" id="title" name="title" required><br>
+                <label for="desc">Task Description:</label><br>
+                <input type="desc" id="desc" name="desc" required><br>
+                <button id="submit">Submit</button>
+            </form>
+            <section id="past-tasks"></section>
+        </div>
     </div>
     <script src="app.js" defer></script>
 </body>
