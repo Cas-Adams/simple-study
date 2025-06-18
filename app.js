@@ -17,6 +17,7 @@ newtask.addEventListener("submit",(event) => {
 
     newtask.reset();
 
+    renderPastTasks();
 });
 
 //Stores the new task from the from 
@@ -26,8 +27,6 @@ function storeNewTask(TaskTitle, TaskDesc) {
     tasks.push({TaskTitle,TaskDesc});
 
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
-
-    window.alert("Testing")
     
 };
 
