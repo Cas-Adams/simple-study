@@ -77,9 +77,9 @@ function renderPastTasks(filterDate = null) {
 
 function deleteTask(index) {
   const tasks = getAllStoredTasks();
-  tasks.splice(index, 1); // Remove task at the given index
+  tasks.splice(index, 1); // Remove task at said index
   window.localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
-  renderPastTasks(); // Refresh the task list
+  renderPastTasks(); // task list again
 }
 
 renderPastTasks();
