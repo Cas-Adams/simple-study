@@ -60,7 +60,7 @@ function renderPastTasks(filterDate = null) {
     taskEL.style.alignItems = "center";
 
     const taskText = document.createElement("span");
-    taskText.textContent = `${tasks.TaskTitle} ${tasks.TaskDesc}`;
+    taskText.innerHTML = `<b>${sanitize(tasks.TaskTitle)}</b> ${sanitize(tasks.TaskDesc)}`;
 
     const deletebtn = document.createElement("button");
     deletebtn.textContent = 'delete';
@@ -83,6 +83,12 @@ function deleteTask(index) {
   window.localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
   renderPastTasks(); // task list again
   window.alert("Task Deleted");
+}
+
+function sanitize(str) {
+  const div = document.createElement("div");
+  div.textContent = str;
+  return div.innerHTML;
 }
 
 renderPastTasks();
