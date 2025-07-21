@@ -25,9 +25,9 @@ legend {
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 800px;
   opacity: 0.9;
   text-align: center;
+  padding: 50px, 50px, 50px, 50px;
 }
 
 input {
@@ -81,7 +81,7 @@ h1 {
   .sidenav a {font-size: 18px;}
 }
 
- body {
+body {
   min-height:100vh;
   display: flex;
   align-items: center;
@@ -90,7 +90,7 @@ h1 {
 }
 
 .calendar {
-  width: 380px;
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -135,7 +135,7 @@ h1 {
 .dates {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
+  gap: 1px;
 }
 
 .date {
@@ -154,7 +154,7 @@ h1 {
 }
 
 .date:hover, .date.active {
-  background: rgb(236, 188, 188);
+  background: rgb(246, 162, 162);
   color: #fff;
 }
 

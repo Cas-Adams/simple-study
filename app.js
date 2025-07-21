@@ -61,7 +61,7 @@ function renderPastTasks(filterDate = null) {
     taskText.textContent = `${tasks.TaskTitle} ${tasks.TaskDesc}`;
 
     const deletebtn = document.createElement("button");
-    deletebtn.textContent = "delete";
+    deletebtn.textContent = 'delete';
     deletebtn.addEventListener("click", () => {deleteTask(index);});
 
 
