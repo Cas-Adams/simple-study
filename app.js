@@ -27,6 +27,8 @@ function storeNewTask(TaskTitle, TaskDesc) {
     tasks.push({TaskTitle,TaskDesc});
 
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+
+    window.alert("New Task Added")
     
 };
 
@@ -80,6 +82,7 @@ function deleteTask(index) {
   tasks.splice(index, 1); // Remove task at said index
   window.localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
   renderPastTasks(); // task list again
+  window.alert("Task Deleted");
 }
 
 renderPastTasks();

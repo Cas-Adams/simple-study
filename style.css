@@ -73,6 +73,7 @@ h1 {
   align-items: center;
   margin-left: 160px; /* Same as the width of the sidebar */
   padding: 0px 10px;
+  width: 70%;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
