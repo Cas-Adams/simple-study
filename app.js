@@ -49,7 +49,7 @@ function renderPastTasks(filterDate = null) {
   const tasks = getAllStoredTasks();
   pastTaskContainer.textContent = "";
 
-  const pastTaskHeader = document.createElement("h2");
+  const pastTaskHeader = document.createElement("h3");
   pastTaskHeader.textContent = "Tasks To Do:";
   const pastTaskList = document.createElement("ul");
 
