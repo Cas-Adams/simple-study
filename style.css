@@ -160,5 +160,17 @@ body {
 }
 
 .clock {
-  font-size: xx-large ;
+  font-size: x-large;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  opacity: 0.9;
+  text-align: center;
+  padding: 50px, 50px, 50px, 50px;
+  background-color: white;
+}
+
+input[type=number] {
+  width:10%;
 }
