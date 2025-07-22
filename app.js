@@ -20,7 +20,7 @@ newtask.addEventListener("submit",(event) => {
     renderPastTasks();
 });
 
-//Stores the new task from the from 
+//Stores the new task from the input 
 function storeNewTask(TaskTitle, TaskDesc) {
     const tasks = getAllStoredTasks();
 
