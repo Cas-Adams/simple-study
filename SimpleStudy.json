@@ -1,0 +1,11 @@
+{
+    "name": "SimpleStudy: Simple studying app",
+    "short_name": "SS",
+    "description": "The simple study app allows for users to store their data offline without anyone else accessing it and to be able to create and use the simple tasks as well as calendar and clock feature.",
+    "start_url": "/index.html",
+    "theme_color": "#eeffee",
+    "background_color": "#eeffee",
+    "display": "standalone",
+    "version": "1.0"
+
+  }
