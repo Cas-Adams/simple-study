@@ -11,8 +11,8 @@ startBtn.addEventListener("click", () => {
 function startCountdown() {
     clearInterval(countdownInterval);
 
-    const hours = parseInt(document.getElementById("hrInput").value);
-    const minutes = parseInt(document.getElementById("minInput").value);
+    const hours = parseInt(document.getElementById("hrInput").value) || 0;
+    const minutes = parseInt(document.getElementById("minInput").value) || 0;
 
     timeLeft = (hours * 60 * 60) + (minutes * 60);
 
@@ -41,7 +41,3 @@ function updateDisplay() {
     const secs = String(timeLeft % 60).padStart(2, '0');
     countDownDisplay.textContent = `${hrs}:${mins}:${secs}`;
 };
-
-
-
-updateDisplay();
